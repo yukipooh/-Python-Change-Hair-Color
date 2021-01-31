@@ -1,6 +1,5 @@
 import numpy as np
 import cv2 as cv
-from matplotlib import pyplot as plt
 
 def addBGR(img,xmin,ymin,x,y,b,g,r):    #BGR値をいじって髪色を変える
     img[ymin + y,xmin + x,0] += b
@@ -12,6 +11,7 @@ img = cv.imread(r'images\hamabeminami.jpg')    #画像読み込み
 img_test = cv.imread(r'images\hamabeminami.jpg')
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 hsv = cv.cvtColor(img,cv.COLOR_BGR2HSV_FULL)
+
 
 ret,thresh = cv.threshold(gray,80,255,cv.THRESH_BINARY)    #threshを指定して白黒にはっきりとわける
 thresh = cv.bitwise_not(thresh) #白黒反転させる
