@@ -68,7 +68,7 @@ def changeColor(imgPath):
                 if (img_test[cnt_y_min + y,cnt_x_min + trim_x + x,0] <= 150 and
                 img_test[cnt_y_min + y,cnt_x_min + trim_x + x,1] <= 150 and
                 img_test[cnt_y_min + y,cnt_x_min + trim_x + x,2] <= 150):
-                    addBGR(img_test,cnt_x_min + trim_x,cnt_y_min,x,y,0,0,85) #b,g,r値を追加！
+                    addBGR(img_test,cnt_x_min + trim_x,cnt_y_min,x,y,85,0,0) #b,g,r値を追加！
                     
                 
     # print(cnt_x_max,cnt_x_min,cnt_y_max,cnt_y_min)
