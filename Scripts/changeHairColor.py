@@ -31,7 +31,7 @@ def changeColor(imgPath):
         
     # cv.imshow("trim",img_trim)
     gray_trim = cv.cvtColor(img_trim,cv.COLOR_BGR2GRAY)
-    ret,thresh = cv.threshold(gray_trim,80,255,cv.THRESH_BINARY)    #threshを指定して白黒にはっきりとわける
+    ret,thresh = cv.threshold(gray_trim,95,255,cv.THRESH_BINARY)    #threshを指定して白黒にはっきりとわける
     thresh = cv.bitwise_not(thresh) #白黒反転させる
     contours,hierarchy = cv.findContours(thresh,cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)    #contoursに領域を格納
 
@@ -61,7 +61,7 @@ def changeColor(imgPath):
 
     for x in range(cnt_width):
         for y in range(cnt_height):
-            dist_img[y,x] = cv.pointPolygonTest(cnt,(x + cnt_x_min,y + cnt_y_min),True) #始点を[cnt_x_min,cnt_y_min]にあわせる
+            dist_img[y,x] = cv.pointPolygonTest(cnt,(float(x + cnt_x_min), float(y + cnt_y_min)),True) #始点を[cnt_x_min,cnt_y_min]にあわせる
             if dist_img[y,x] > 0:   #領域なの点だったら
                 # cv.circle(img_test,tuple([x + cnt_x_min,y + cnt_y_min]),1,[0,0,255],-1) #指定した座標に円を描く
                 # img_test[y + cnt_y_min,x + cnt_x_min,0] += 40
