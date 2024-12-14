@@ -1,6 +1,7 @@
 # -Python-Change-Hair-Color
 This app can change hair color by using python and openCV. This app is currently under development. For using this app in practical, it might be effective by using Haar_Cascade to obtain region around face so that you can easily detect hair-region which is supposed to be colored.
 
+## How to use.
 ### First, you can launch this app by run main.py.
 ### After running main.py, you can see GUI application like the image below.
 ![image](https://github.com/user-attachments/assets/480e341e-c6bd-4975-8a0c-cc77bff63f83)
